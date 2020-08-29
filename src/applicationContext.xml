@@ -11,18 +11,23 @@
     and that is what required for Spring to be able to process this file using 
     it's grammar and xml schema -->
 	   
-	   <!-- Define your beans here -->
-	   <bean id = "myFortune"
+	   <bean id = "myFortuneService"
 	   		class = "com.luv2code.springdemo.HappyFortuneService">
 	   </bean>
 	   
-	   <!-- Define your beans here -->
 	   <bean id = "myCoach"
 	   		class = "com.luv2code.springdemo.TrackCoach">
 	   		
 	   		<!-- set up constructor injection -->
-	   		<constructor-arg ref="myFortune" />
+	   		<constructor-arg ref="myFortuneService" />
 	   </bean>
+
+		<bean id = "myCricketCoach"
+			class = "com.luv2code.springdemo.CricketCoach">
+
+			<!-- set up setter injection -->
+			<property name="fortuneService" ref="myFortuneService"/>
+		</bean>
 	   
 	   <bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
