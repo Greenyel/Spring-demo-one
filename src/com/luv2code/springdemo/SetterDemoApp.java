@@ -16,6 +16,11 @@ public class SetterDemoApp {
         System.out.println(cricketCoach.getDailyWorkout());
 
         System.out.println(cricketCoach.getDailyFortune());
+
+        //call setter injection methods to get defined literal values
+        System.out.println(cricketCoach.getEmailAddress());
+        System.out.println(cricketCoach.getTeamName());
+
         //close the context
         context.close();
     }
