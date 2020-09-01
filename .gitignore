@@ -1,0 +1,5 @@
+.idea
+spring-annotations-and-XML.iml
+lib/spring-*
+*.class
+out/
