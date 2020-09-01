@@ -1,6 +1,7 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.io.FileOutputStream;
@@ -8,6 +9,8 @@ import java.io.FileOutputStream;
 @Component
 public class TennisCoach implements Coach{
 
+    @Autowired
+    @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
 
     //define a default constructor
@@ -16,11 +19,11 @@ public class TennisCoach implements Coach{
     }
 
     //define a setter method for injections
-    @Autowired
+    /*@Autowired
     public void doSomeStuff(FortuneService fortuneService) {
         System.out.println(">> TennisCoach: inside doSomeStuff method");
         this.fortuneService = fortuneService;
-    }
+    }/*
 
     /*@Autowired
     public TennisCoach(FortuneService fortuneService){
