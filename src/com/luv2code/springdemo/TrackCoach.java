@@ -3,10 +3,13 @@ package com.luv2code.springdemo;
 public class TrackCoach implements Coach {
 
 	private FortuneService fortuneService;
-	
-	
+
+	public TrackCoach() {
+		System.out.println("inside TrackCoach() constructor");
+	}
 
 	public TrackCoach(FortuneService fortuneService) {
+		System.out.println("inside TrackCoach (FortuneService fortuneService) constructor");
 		this.fortuneService = fortuneService;
 	}
 
@@ -20,5 +23,13 @@ public class TrackCoach implements Coach {
 		
 		return "Just do it! " + fortuneService.getFortune();
 	}
-	
+
+	// add an init method
+	public void doMyStartupStuff() {
+		System.out.println("TrackCoach: inside method doMyStartupStuff");
+	}
+	//add a destroy method
+	public void doMyCleanupStuffYoYo() {
+		System.out.println("TrackCoach: inside method doMyCleanupStuffYoYo");
+	}
 }
