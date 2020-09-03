@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 import java.io.FileOutputStream;
 
 @Component
-public class TennisCoach implements Coach{
+public class TennisCoach implements Coach {
 
     @Autowired
-    @Qualifier("happyFortuneService")
+    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
     //define a default constructor
